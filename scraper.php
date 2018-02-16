@@ -12,7 +12,7 @@ require 'scraperwiki/simple_html_dom.php';
 	
 	if($page)
 	{	
-		
+		sleep(2);
 		$link	=	'https://indiankanoon.org/'.$page;
 		$pageofyears	=	file_get_html($link);
 		foreach($pageofyears->find("/html/body/div[2]/table/tbody/tr/td/div[@class='browselist']")as $year)
@@ -20,12 +20,14 @@ require 'scraperwiki/simple_html_dom.php';
 			$yearlink	=	$year->find("a",0)->href;
 			$yeartext	=	$year->find("a",0)->plaintext;
 			if($yearlink)
-			{
+			{	
+				sleep(2);
 				echo "Scraper Inprogress don't stop";
 				$pagelink		=	 'https://indiankanoon.org'.$yearlink;
 				$openyearpage	=	  file_get_html($pagelink);
 				if($openyearpage)
-				{
+				{	
+					sleep(2);
 					foreach($openyearpage->find("//td/div[@class='browselist']")as $month)
 					{
 						$monthname	=	$month->find("a",0)->href;
@@ -36,6 +38,7 @@ require 'scraperwiki/simple_html_dom.php';
 		if($html)
 		{
 			//  Page loaded successfully
+			sleep(2);
 		$RecordLoop =   -1;
 		$RecordFlag =   true;
 		while ($RecordFlag == true) 
