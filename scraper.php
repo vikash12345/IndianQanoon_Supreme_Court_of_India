@@ -46,7 +46,7 @@ require 'scraperwiki/simple_html_dom.php';
 					$RecordLoop+=  1;
 					$paginationlink		=	$urlofpage.'&pagenum='.$RecordLoop;
 					$mainpageofprofiles 		=	file_get_html($paginationlink);
-					slee(5);
+					sleep(5);
 					$checkerprofile	=	$mainpageofprofiles->find("/html/body/div/div[3]/form/input[3]",0);
 			
 			
