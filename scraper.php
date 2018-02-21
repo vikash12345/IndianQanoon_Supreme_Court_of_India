@@ -53,7 +53,7 @@ require 'scraperwiki/simple_html_dom.php';
 					
 					if (!$checkerprofile) 
 								{
-									echo "$pagetext...\n";
+									
 									$RecordFlag =   false;
 									break;
 								}			
